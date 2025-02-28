@@ -36,8 +36,8 @@ func (h *hello) Render() app.UI {
 
 func main() {
 	// Go-app component routing (client-side):
-	app.Route("/", func() app.Composer { return &hello{} })
-	app.Route("/hello", func() app.Composer { return &hello{} })
+	app.Route("/", func() app.Composer { return &hello{name: "go"} })
+	app.Route("/hello", func() app.Composer { return &hello{name: "hello"} })
 	app.RunWhenOnBrowser()
 
 	// Standard HTTP routing (server-side):
